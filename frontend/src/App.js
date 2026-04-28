@@ -9,6 +9,7 @@ import Membership from "@/pages/Membership";
 import Gallery from "@/pages/Gallery";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import BrandKit from "@/pages/BrandKit";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/brand-kit" element={<BrandKit />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </Layout>

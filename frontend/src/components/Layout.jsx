@@ -41,16 +41,22 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const dismissed = sessionStorage.getItem("rm_popup_dismissed");
-      if (!dismissed) setPopup(true);
-    }, 5500);
+      const dismissedAt = localStorage.getItem("rm_popup_dismissed_at");
+      const now = Date.now();
+      // re-show 24h after last dismissal so visitors actually see it
+      if (!dismissedAt || now - parseInt(dismissedAt, 10) > 24 * 60 * 60 * 1000) {
+        setPopup(true);
+      }
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
   const closePopup = () => {
-    sessionStorage.setItem("rm_popup_dismissed", "1");
+    localStorage.setItem("rm_popup_dismissed_at", Date.now().toString());
     setPopup(false);
   };
+
+  const openPopup = () => setPopup(true);
 
   return (
     <div className="App">
@@ -214,6 +220,31 @@ const Layout = ({ children }) => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating Festive Offers button (above WhatsApp) */}
+      <button
+        onClick={openPopup}
+        aria-label="View Festive Offers"
+        data-testid="festive-trigger"
+        className="fixed right-5 bottom-[calc(var(--bnav-h,72px)+150px)] lg:bottom-[150px] z-[60] w-14 h-14 rounded-full text-[var(--rm-cream)] shadow-2xl hover:scale-110 active:scale-95 transition-transform"
+        style={{
+          background:
+            "radial-gradient(circle at 30% 30%, #8a2a3a 0%, #6a1e2c 55%, #4a121d 100%)",
+          boxShadow:
+            "0 0 0 3px #c9a64633, 0 12px 28px rgba(106,30,44,0.45), inset 0 -6px 14px rgba(0,0,0,0.3)",
+        }}
+      >
+        <i className="fa-solid fa-gift text-[20px]" />
+        <span
+          aria-hidden="true"
+          className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[var(--rm-gold-light)] animate-ping"
+          style={{ opacity: 0.85 }}
+        />
+        <span
+          aria-hidden="true"
+          className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[var(--rm-gold)]"
+        />
+      </button>
 
       {/* Floating WhatsApp */}
       <a
