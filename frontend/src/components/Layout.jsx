@@ -157,8 +157,8 @@ const Layout = ({ children }) => {
           className="absolute inset-0 bg-[var(--rm-maroon-deep)]/70 backdrop-blur-sm"
           onClick={() => setOpen(false)}
         />
-        <aside className="absolute top-0 right-0 w-[80%] max-w-[340px] h-full bg-[var(--rm-cream)] shadow-2xl p-7 flex flex-col">
-          <div className="flex items-center justify-between mb-6">
+        <aside className="absolute top-0 right-0 w-[80%] max-w-[340px] h-full bg-[var(--rm-cream)] shadow-2xl pt-12 px-7 pb-7 flex flex-col">
+          <div className="flex items-center justify-between mb-6 pt-4">
             <img src="/assets/images/logo.png" alt="" className="h-10" />
             <button
               onClick={() => setOpen(false)}
