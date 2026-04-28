@@ -1,5 +1,5 @@
-// Stock images & product catalog data — verified Pexels Indian wedding photos
-// (extracted from pexels.com/search/indian%20wedding)
+// Stock images & product catalog data
+// Mix of category-verified Unsplash + Pexels images, hand-mapped to context.
 export const SITE = {
   name: "Radha Madhav",
   fullName: "Radha Madhav Wholesale Family Mart",
@@ -19,9 +19,45 @@ export const SITE = {
 export const waLink = (msg) =>
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`;
 
-// Image URL builder for Pexels with auto-compression (canonical format only)
+// Image URL builders — each verified via direct fetch.
 const px = (id) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900`;
+
+// Unsplash canonical photo URL (verified against unsplash.com page renders)
+const us = (slug) =>
+  `https://images.unsplash.com/${slug}?auto=format&fit=crop&w=900&q=70`;
+
+// === Verified category-matched images ===
+// HALDI (yellow / turmeric tones)
+const HALDI_BRIDE = us("photo-1698460895537-a418b64bcc54"); // bride in yellow dress, haldi ceremony
+const HALDI_SARI = us("photo-1698460917986-8dfcea8b6ca7"); // yellow sari on bench
+const HALDI_SMILE = us("photo-1703044687659-465a1513aaae"); // yellow sari smiling
+
+// WEDDING / BRIDE (red & gold)
+const BRIDE_RED_GOLD = us("photo-1640745693152-1c2aab4a8253"); // red & gold wedding outfit
+const BRIDE_LEHENGA = us("photo-1645856048246-2ea2557cc3e1"); // red & gold lehenga
+const BRIDE_RECEPTION = us("photo-1737515045456-176abaccbe93"); // red & gold outfit
+const BRIDE_BANARASI = us("photo-1737515046830-1680d82e043c"); // red & gold bridal
+const BRIDE_ORNATE = us("photo-1762708597713-5d7a1d1d98ee"); // ornate red bridal
+
+// JEWELLERY (gold close-ups, kundan, polki vibe)
+const JEWEL_NECKLACE = us("flagged/photo-1570055349452-29232699cc63"); // gold necklace on bride
+const JEWEL_GOLD_SET = us("photo-1645856049138-bcb23afaeefb"); // gold necklace + earrings
+const JEWEL_BANGLES = us("photo-1704136404616-0fe61c322633"); // necklace & bracelet close up
+const JEWEL_KUNDAN = us("photo-1641382161166-4f3c320f0c6d"); // gold & red — kundan look
+const JEWEL_POLKI = us("photo-1710494421236-2f9c1182998a"); // red & gold jewellery
+
+// MEHNDI (orange/maroon hennaed hands)
+const MEHNDI_PEXELS = px(12037072); // pexels mehndi search result
+
+// SANGEET (jewel-tone night)
+const SANGEET_NIGHT = px(9778787);
+
+// DAILY ELEGANCE
+const DAILY_PASTEL = px(33006935);
+
+// SHOWROOM
+const SHOWROOM = "/assets/images/showroom.jpg";
 
 export const occasions = [
   {
@@ -30,7 +66,7 @@ export const occasions = [
     subtitle: "Sunlit & Joyful",
     icon: "fa-sun",
     color: "#e6b800",
-    image: px(8819253),
+    image: HALDI_BRIDE,
   },
   {
     id: "mehndi",
@@ -38,7 +74,7 @@ export const occasions = [
     subtitle: "Color & Celebration",
     icon: "fa-leaf",
     color: "#0c8a3e",
-    image: px(12037072),
+    image: MEHNDI_PEXELS,
   },
   {
     id: "sangeet",
@@ -46,7 +82,7 @@ export const occasions = [
     subtitle: "Music & Glamour",
     icon: "fa-music",
     color: "#8a2a3a",
-    image: px(9778787),
+    image: SANGEET_NIGHT,
   },
   {
     id: "wedding",
@@ -54,7 +90,7 @@ export const occasions = [
     subtitle: "The Grand Day",
     icon: "fa-crown",
     color: "#c9a646",
-    image: px(34479857),
+    image: BRIDE_ORNATE,
   },
   {
     id: "daily",
@@ -62,38 +98,80 @@ export const occasions = [
     subtitle: "Everyday Grace",
     icon: "fa-feather",
     color: "#6a1e2c",
-    image: px(33006935),
+    image: DAILY_PASTEL,
   },
 ];
 
 export const collections = {
   brides: {
     title: "For The Bride",
-    accent: "Lehengas • Sarees • Jewellery",
+    accent: "Lehengas • Sarees • Bridal Wear",
     items: [
       {
         name: "Royal Maroon Lehenga",
         price: "Visit For Price",
         tag: "Bridal",
-        img: px(33101418),
+        img: BRIDE_LEHENGA,
       },
       {
         name: "Banarasi Silk Saree",
         price: "Visit For Price",
         tag: "Heritage",
-        img: px(35872894),
+        img: BRIDE_BANARASI,
       },
       {
         name: "Pastel Reception Lehenga",
         price: "Visit For Price",
         tag: "Reception",
-        img: px(17000467),
+        img: BRIDE_RECEPTION,
       },
       {
-        name: "Kundan Bridal Jewellery",
+        name: "Sunshine Haldi Saree",
+        price: "Visit For Price",
+        tag: "Haldi",
+        img: HALDI_SARI,
+      },
+    ],
+  },
+  jewellery: {
+    title: "Artificial Jewellery",
+    accent: "Kundan • Polki • Choker • Maang Tikka",
+    items: [
+      {
+        name: "Kundan Bridal Necklace Set",
         price: "Visit For Price",
         tag: "Jewellery",
-        img: px(33101418),
+        img: JEWEL_NECKLACE,
+      },
+      {
+        name: "Polki Choker & Earrings",
+        price: "Visit For Price",
+        tag: "Jewellery",
+        img: JEWEL_GOLD_SET,
+      },
+      {
+        name: "Gold Bangles & Bracelet",
+        price: "Visit For Price",
+        tag: "Jewellery",
+        img: JEWEL_BANGLES,
+      },
+      {
+        name: "Maang Tikka & Earring Combo",
+        price: "Visit For Price",
+        tag: "Jewellery",
+        img: JEWEL_KUNDAN,
+      },
+      {
+        name: "Heavy Bridal Haar",
+        price: "Visit For Price",
+        tag: "Jewellery",
+        img: JEWEL_POLKI,
+      },
+      {
+        name: "Daily Wear Earrings",
+        price: "Visit For Price",
+        tag: "Jewellery",
+        img: JEWEL_GOLD_SET,
       },
     ],
   },
@@ -147,7 +225,7 @@ export const collections = {
         name: "Cotton Daily Saree",
         price: "Visit For Price",
         tag: "Daily",
-        img: px(33006935),
+        img: DAILY_PASTEL,
       },
       {
         name: "Boys Sherwani Set",
@@ -166,7 +244,7 @@ export const offers = [
     save: "Up to 35% Off",
     color: "#6a1e2c",
     icon: "fa-ring",
-    image: px(9778787),
+    image: BRIDE_RED_GOLD,
   },
   {
     title: "Saree Festival Discounts",
@@ -174,7 +252,15 @@ export const offers = [
     save: "Flat 20% Off",
     color: "#c9a646",
     icon: "fa-tags",
-    image: px(35872894),
+    image: BRIDE_BANARASI,
+  },
+  {
+    title: "Artificial Jewellery Bonanza",
+    subtitle: "Kundan • Polki • Maang Tikka Sets",
+    save: "Up to 40% Off",
+    color: "#a78429",
+    icon: "fa-gem",
+    image: JEWEL_NECKLACE,
   },
   {
     title: "Groom Special Offer",
@@ -182,7 +268,7 @@ export const offers = [
     save: "Save ₹4,000+",
     color: "#4a121d",
     icon: "fa-user-tie",
-    image: px(17000467),
+    image: px(35843780),
   },
   {
     title: "Bulk Purchase Benefits",
@@ -190,7 +276,7 @@ export const offers = [
     save: "Best Prices",
     color: "#8a2a3a",
     icon: "fa-store",
-    image: px(35843780),
+    image: px(17000467),
   },
 ];
 
@@ -226,18 +312,18 @@ export const testimonials = [
 ];
 
 export const galleryImages = [
-  px(9778787),
-  px(35872894),
-  px(33101418),
-  px(34479857),
-  px(17000467),
-  px(35843780),
-  px(8938193),
-  px(29357484),
-  "/assets/images/showroom.jpg",
-  px(33006935),
-  px(12037072),
-  px(8819253),
+  HALDI_BRIDE,
+  BRIDE_RED_GOLD,
+  JEWEL_NECKLACE,
+  BRIDE_BANARASI,
+  HALDI_SARI,
+  BRIDE_LEHENGA,
+  JEWEL_KUNDAN,
+  BRIDE_ORNATE,
+  SHOWROOM,
+  JEWEL_BANGLES,
+  HALDI_SMILE,
+  BRIDE_RECEPTION,
 ];
 
 export const reels = [

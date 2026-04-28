@@ -90,26 +90,44 @@ const Layout = ({ children }) => {
       >
         <div className="container-rm flex items-center justify-between py-3 lg:py-4">
           <Link to="/" className="flex items-center gap-3" data-testid="logo-link">
-            <span className="inline-flex items-center justify-center bg-white/95 rounded-full p-1.5 shadow-md ring-1 ring-[#c9a64655]">
-              <img
-                src="/assets/images/logo.png"
-                alt="Radha Madhav"
-                className="h-10 lg:h-12 w-auto"
-              />
-            </span>
-            <div className="hidden sm:block leading-tight">
+            <div className="leading-tight relative">
+              {/* Gold wordmark */}
               <div
-                className="font-royal text-[15px] lg:text-[17px] font-bold transition-colors"
-                style={{ color: scrolled ? "#6a1e2c" : "#fbf8f1", textShadow: scrolled ? "none" : "0 2px 12px rgba(0,0,0,0.5)" }}
+                className="font-royal italic font-bold text-[20px] lg:text-[24px] leading-none tracking-[0.02em]"
+                style={{
+                  background: scrolled
+                    ? "linear-gradient(135deg,#a78429 10%,#c9a646 50%,#e6cf86 90%)"
+                    : "linear-gradient(135deg,#f6e8b5 10%,#e6cf86 50%,#c9a646 90%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  filter: scrolled
+                    ? "drop-shadow(0 1px 1px rgba(106,30,44,0.25))"
+                    : "drop-shadow(0 2px 6px rgba(0,0,0,0.55))",
+                }}
               >
                 Radha Madhav
               </div>
+              {/* Tagline */}
               <div
-                className="text-[10px] tracking-[0.3em] uppercase transition-colors"
-                style={{ color: scrolled ? "#a78429" : "#e6cf86", textShadow: scrolled ? "none" : "0 2px 12px rgba(0,0,0,0.5)" }}
+                className="hidden sm:block text-[9px] lg:text-[10px] tracking-[0.42em] uppercase mt-0.5 font-semibold transition-colors"
+                style={{
+                  color: scrolled ? "#6a1e2c" : "#f3ece0",
+                  textShadow: scrolled ? "none" : "0 1px 6px rgba(0,0,0,0.55)",
+                }}
               >
                 Wholesale Family Mart
               </div>
+              {/* Underline ornament */}
+              <span
+                aria-hidden="true"
+                className="hidden sm:block absolute -bottom-1 left-0 h-[2px] w-12"
+                style={{
+                  background:
+                    "linear-gradient(90deg,transparent,#c9a646 40%,#e6cf86 60%,transparent)",
+                  opacity: scrolled ? 0.85 : 0.95,
+                }}
+              />
             </div>
           </Link>
 

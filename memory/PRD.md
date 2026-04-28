@@ -37,17 +37,20 @@ Build a premium, emotionally engaging, mobile-first frontend-only website for Ra
 ## Test Report
 Iteration 1: 30/30 frontend assertions passed (100%). All 7 routes resolve, navigation/forms/popup/lightbox/filters/stylist-tool/map/logo all functional. WhatsApp deep links contain `wa.me/919151687774`.
 
-## What's Implemented (2025-12)
+## What's Implemented (2025-12 → 2026-02)
 - Full responsive multipage site (desktop + mobile)
 - Premium royal aesthetic, hero video, animations
 - All forms WhatsApp-integrated
 - Festive popup, countdown timer, reel-style videos
 - SEO meta + JSON-LD ClothingStore schema
 - 70+ data-testid attributes for testability
+- 2026-02-28: New gold-italic wordmark header logo (replaced white-pill PNG); existing logo retained in mobile drawer & footer.
+- 2026-02-28: Category-accurate stock photos (verified Unsplash URLs) — Haldi clearly yellow, Wedding/Bridal clearly red+gold.
+- 2026-02-28: Added "Artificial Jewellery" collection group (6 items: Kundan necklace, Polki choker, gold bangles, maang tikka combo, bridal haar, daily-wear earrings) + new offer "Artificial Jewellery Bonanza".
 
 ## Backlog / Next Tasks
 - P1: Wire real Instagram embed if business token provided
-- P1: Replace Pexels stock with actual showroom photoshoot when available
+- P1: Replace stock photos with actual showroom photoshoot when available
 - P2: Add a small backend (FastAPI + Mongo) to capture membership/contact submissions instead of WhatsApp-only
 - P2: Add multi-language toggle (Hindi/English)
 - P2: Bulk-purchase quote calculator
