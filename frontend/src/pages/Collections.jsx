@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { collections, waLink, occasions } from "@/data/site";
 import { Ornament } from "@/components/Ornaments";
+import SkintoneTool from "@/components/SkintoneTool";
 import { useReveal } from "@/hooks/useReveal";
 
 const FILTERS = [
@@ -124,6 +125,9 @@ const Collections = () => {
           </div>
         </div>
       </section>
+
+      {/* Skintone Color Tool */}
+      <SkintoneTool />
 
       {/* Filters */}
       <section className="pb-8" data-testid="collections-filters">

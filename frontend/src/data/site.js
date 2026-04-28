@@ -59,6 +59,73 @@ const DAILY_PASTEL = px(33006935);
 // SHOWROOM
 const SHOWROOM = "/assets/images/showroom.jpg";
 
+// KIDS (Indian ethnic kids)
+const KIDS_GIRLS = us("photo-1769773650757-0c92db57d9ca"); // two young girls in traditional Indian clothing
+const KIDS_BOY = us("photo-1631041047692-884b00d328d5"); // boy on yellow textile
+const KIDS_TODDLERS = us("photo-1517351313798-6f674000e4aa"); // toddlers in red clothes
+const KIDS_FAMILY = us("photo-1768052271552-b9c888b2f7db"); // woman and child traditional attire
+
+// PARTNERS / LEADERSHIP
+export const partners = [
+  { name: "Hari Agrawal", role: "Designated Partner" },
+  { name: "Naveen Agrawal", role: "Designated Partner" },
+  { name: "Nikunj Agrawal", role: "Designated Partner" },
+  { name: "Rachit Agrawal", role: "Designated Partner" },
+  { name: "Parth Agrawal", role: "Designated Partner" },
+];
+
+// Skintone → Recommended fashion color palette
+export const skintonePalettes = {
+  fair: {
+    label: "Fair / Light",
+    desc: "Cool undertones love jewel tones & soft pastels.",
+    colors: [
+      { name: "Royal Blue", hex: "#1f3a93" },
+      { name: "Emerald", hex: "#0c8a3e" },
+      { name: "Ruby Red", hex: "#9b1d20" },
+      { name: "Lavender", hex: "#b497d6" },
+      { name: "Soft Pink", hex: "#f4b8c4" },
+      { name: "Champagne", hex: "#e9d8a6" },
+    ],
+  },
+  wheatish: {
+    label: "Wheatish / Medium",
+    desc: "Warm earthy & jewel tones bring out your glow.",
+    colors: [
+      { name: "Rust Orange", hex: "#b1532a" },
+      { name: "Mustard", hex: "#d4a017" },
+      { name: "Bottle Green", hex: "#0b6e4f" },
+      { name: "Magenta", hex: "#a8327d" },
+      { name: "Copper", hex: "#b87333" },
+      { name: "Royal Maroon", hex: "#6a1e2c" },
+    ],
+  },
+  dusky: {
+    label: "Dusky / Olive",
+    desc: "Bright vibrant shades make you radiate.",
+    colors: [
+      { name: "Coral", hex: "#ff6f61" },
+      { name: "Turquoise", hex: "#1abc9c" },
+      { name: "Hot Pink", hex: "#e91e63" },
+      { name: "Mint", hex: "#a8e6cf" },
+      { name: "Ivory White", hex: "#faf3e7" },
+      { name: "Electric Blue", hex: "#1f6feb" },
+    ],
+  },
+  deep: {
+    label: "Deep / Dark",
+    desc: "Bold high-contrast colors & metallics shine on you.",
+    colors: [
+      { name: "Sunshine Yellow", hex: "#f9c80e" },
+      { name: "Cobalt Blue", hex: "#0052cc" },
+      { name: "Gold", hex: "#c9a646" },
+      { name: "Lime Green", hex: "#a3d62a" },
+      { name: "Crimson", hex: "#dc143c" },
+      { name: "Pure White", hex: "#ffffff" },
+    ],
+  },
+};
+
 export const occasions = [
   {
     id: "haldi",
@@ -219,7 +286,7 @@ export const collections = {
         name: "Festive Kids Lehenga",
         price: "Visit For Price",
         tag: "Kids",
-        img: px(35872894),
+        img: KIDS_GIRLS,
       },
       {
         name: "Cotton Daily Saree",
@@ -231,7 +298,19 @@ export const collections = {
         name: "Boys Sherwani Set",
         price: "Visit For Price",
         tag: "Kids",
-        img: px(34479857),
+        img: KIDS_BOY,
+      },
+      {
+        name: "Toddler Festive Outfit",
+        price: "Visit For Price",
+        tag: "Kids",
+        img: KIDS_TODDLERS,
+      },
+      {
+        name: "Mother & Child Combo",
+        price: "Visit For Price",
+        tag: "Family",
+        img: KIDS_FAMILY,
       },
     ],
   },

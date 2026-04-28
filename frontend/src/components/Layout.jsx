@@ -427,6 +427,9 @@ const Footer = () => (
           © {new Date().getFullYear()} Radha Madhav Wholesale Family Mart LLP.
           All rights reserved.
         </span>
+        <span className="text-center md:text-right">
+          Designated Partners: Hari, Naveen, Nikunj, Rachit & Parth Agrawal
+        </span>
         <span>Made with ❤ in Gorakhpur</span>
       </div>
     </div>

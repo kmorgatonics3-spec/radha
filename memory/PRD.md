@@ -46,7 +46,11 @@ Iteration 1: 30/30 frontend assertions passed (100%). All 7 routes resolve, navi
 - 70+ data-testid attributes for testability
 - 2026-02-28: New gold-italic wordmark header logo (replaced white-pill PNG); existing logo retained in mobile drawer & footer.
 - 2026-02-28: Category-accurate stock photos (verified Unsplash URLs) — Haldi clearly yellow, Wedding/Bridal clearly red+gold.
-- 2026-02-28: Added "Artificial Jewellery" collection group (6 items: Kundan necklace, Polki choker, gold bangles, maang tikka combo, bridal haar, daily-wear earrings) + new offer "Artificial Jewellery Bonanza".
+- 2026-02-28: Added "Artificial Jewellery" collection group (6 items) + new offer "Artificial Jewellery Bonanza".
+- 2026-02-28: Final logo polish — header/footer use only PNG logo with gold drop-shadow glow (no white pill, no redundant text).
+- 2026-02-28: Designated Partners section added to About page (Hari, Naveen, Nikunj, Rachit, Parth Agrawal); footer copyright row also lists them.
+- 2026-02-28: Kids images replaced with category-accurate Indian kids ethnic wear photos; expanded family group to 6 items (Toddler Festive Outfit, Mother & Child Combo added).
+- 2026-02-28: NEW Skintone Color Match Tool on Collections page — 4 skintones (Fair/Wheatish/Dusky/Deep) → 6 matched fashion colors per tone + WhatsApp CTA.
 
 ## Backlog / Next Tasks
 - P1: Wire real Instagram embed if business token provided

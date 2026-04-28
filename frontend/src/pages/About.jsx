@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Ornament, Mandala } from "@/components/Ornaments";
-import { SITE } from "@/data/site";
+import { SITE, partners } from "@/data/site";
 import { useReveal } from "@/hooks/useReveal";
 
 const VALUES = [
@@ -73,6 +73,50 @@ const About = () => {
                 </span>
                 <h3 className="font-royal text-lg mt-4 text-[var(--rm-maroon)]">{v.t}</h3>
                 <p className="text-sm text-[var(--rm-mute)] mt-2">{v.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-24" data-testid="about-partners">
+        <div className="container-rm">
+          <div className="text-center mb-12 reveal">
+            <span className="section-eyebrow">Leadership</span>
+            <h2 className="section-title text-4xl md:text-5xl mt-3">
+              Designated <span className="text-gold-grad">Partners</span>
+            </h2>
+            <p className="font-cormorant italic text-lg md:text-xl text-[var(--rm-mute)] mt-3 max-w-2xl mx-auto">
+              The Agrawal family — five generations of trust, three decades of
+              fashion expertise, one shared dream.
+            </p>
+            <Ornament className="w-44 mt-5 mx-auto" />
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+            {partners.map((p, i) => (
+              <div
+                key={p.name}
+                className="royal-card rounded-2xl p-6 text-center relative reveal"
+                style={{ transitionDelay: `${i * 80}ms` }}
+                data-testid={`partner-card-${i}`}
+              >
+                <span
+                  className="w-16 h-16 rounded-full mx-auto flex items-center justify-center font-royal text-2xl"
+                  style={{
+                    background:
+                      "linear-gradient(135deg,#6a1e2c 0%,#8a2a3a 60%,#a78429 100%)",
+                    color: "#f6e8b5",
+                    boxShadow: "0 6px 18px rgba(106,30,44,0.25)",
+                  }}
+                >
+                  {p.name.split(" ")[0][0]}
+                </span>
+                <h3 className="font-royal text-lg mt-4 text-[var(--rm-maroon)] leading-tight">
+                  {p.name}
+                </h3>
+                <p className="text-[11px] tracking-[0.22em] uppercase text-[var(--rm-gold-deep)] mt-1.5 font-semibold">
+                  {p.role}
+                </p>
               </div>
             ))}
           </div>
