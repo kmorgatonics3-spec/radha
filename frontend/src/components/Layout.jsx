@@ -89,46 +89,17 @@ const Layout = ({ children }) => {
         data-testid="main-header"
       >
         <div className="container-rm flex items-center justify-between py-3 lg:py-4">
-          <Link to="/" className="flex items-center gap-3" data-testid="logo-link">
-            <div className="leading-tight relative">
-              {/* Gold wordmark */}
-              <div
-                className="font-royal italic font-bold text-[20px] lg:text-[24px] leading-none tracking-[0.02em]"
-                style={{
-                  background: scrolled
-                    ? "linear-gradient(135deg,#a78429 10%,#c9a646 50%,#e6cf86 90%)"
-                    : "linear-gradient(135deg,#f6e8b5 10%,#e6cf86 50%,#c9a646 90%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  filter: scrolled
-                    ? "drop-shadow(0 1px 1px rgba(106,30,44,0.25))"
-                    : "drop-shadow(0 2px 6px rgba(0,0,0,0.55))",
-                }}
-              >
-                Radha Madhav
-              </div>
-              {/* Tagline */}
-              <div
-                className="hidden sm:block text-[9px] lg:text-[10px] tracking-[0.42em] uppercase mt-0.5 font-semibold transition-colors"
-                style={{
-                  color: scrolled ? "#6a1e2c" : "#f3ece0",
-                  textShadow: scrolled ? "none" : "0 1px 6px rgba(0,0,0,0.55)",
-                }}
-              >
-                Wholesale Family Mart
-              </div>
-              {/* Underline ornament */}
-              <span
-                aria-hidden="true"
-                className="hidden sm:block absolute -bottom-1 left-0 h-[2px] w-12"
-                style={{
-                  background:
-                    "linear-gradient(90deg,transparent,#c9a646 40%,#e6cf86 60%,transparent)",
-                  opacity: scrolled ? 0.85 : 0.95,
-                }}
-              />
-            </div>
+          <Link to="/" className="flex items-center" data-testid="logo-link">
+            <img
+              src="/assets/images/logo.png"
+              alt="Radha Madhav Wholesale Family Mart"
+              className="h-14 lg:h-16 w-auto transition-all duration-500"
+              style={{
+                filter: scrolled
+                  ? "drop-shadow(0 2px 4px rgba(106,30,44,0.25)) drop-shadow(0 0 1px rgba(201,166,70,0.4))"
+                  : "drop-shadow(0 2px 8px rgba(0,0,0,0.65)) drop-shadow(0 0 14px rgba(230,207,134,0.55))",
+              }}
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8" data-testid="desktop-nav">
@@ -188,7 +159,15 @@ const Layout = ({ children }) => {
         />
         <aside className="absolute top-0 right-0 w-[80%] max-w-[340px] h-full bg-[var(--rm-cream)] shadow-2xl pt-12 px-7 pb-7 flex flex-col">
           <div className="flex items-center justify-between mb-6 pt-4">
-            <img src="/assets/images/logo.png" alt="" className="h-10" />
+            <img
+              src="/assets/images/logo.png"
+              alt=""
+              className="h-12 w-auto"
+              style={{
+                filter:
+                  "drop-shadow(0 2px 4px rgba(106,30,44,0.25)) drop-shadow(0 0 8px rgba(201,166,70,0.35))",
+              }}
+            />
             <button
               onClick={() => setOpen(false)}
               className="w-9 h-9 rounded-full border border-[var(--rm-maroon)]/30"
@@ -355,16 +334,16 @@ const Footer = () => (
     <div className="container-rm relative">
       <div className="grid md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
-          <Link to="/" className="flex items-center gap-3 mb-5" style={{ color: "inherit" }}>
-            <img src="/assets/images/logo.png" alt="" className="h-14 bg-white/95 rounded-full p-1.5 shadow-md" />
-            <div>
-              <div className="font-royal text-xl text-gold-grad">
-                Radha Madhav
-              </div>
-              <div className="text-[11px] tracking-[0.3em] uppercase text-[#e6cf86]">
-                Wholesale Family Mart
-              </div>
-            </div>
+          <Link to="/" className="inline-flex items-center mb-5" style={{ color: "inherit" }}>
+            <img
+              src="/assets/images/logo.png"
+              alt="Radha Madhav Wholesale Family Mart"
+              className="h-20 w-auto"
+              style={{
+                filter:
+                  "drop-shadow(0 2px 8px rgba(0,0,0,0.55)) drop-shadow(0 0 16px rgba(230,207,134,0.45))",
+              }}
+            />
           </Link>
           <p className="font-cormorant text-xl italic leading-relaxed max-w-md" style={{ color: "rgba(248, 245, 240, 0.85)" }}>
             "Yahan sirf kapde nahi, yaadein milti hain — har khushi, har
