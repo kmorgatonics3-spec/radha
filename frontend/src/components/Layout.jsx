@@ -83,23 +83,31 @@ const Layout = ({ children }) => {
       {/* Top Nav */}
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "glass-nav top-0" : "top-[40px]"
+          scrolled ? "glass-nav top-0" : "top-[40px] bg-transparent"
         }`}
         style={{ top: scrolled ? 0 : 40 }}
         data-testid="main-header"
       >
         <div className="container-rm flex items-center justify-between py-3 lg:py-4">
           <Link to="/" className="flex items-center gap-3" data-testid="logo-link">
-            <img
-              src="/assets/images/logo.png"
-              alt="Radha Madhav"
-              className="h-12 lg:h-14 w-auto drop-shadow"
-            />
+            <span className="inline-flex items-center justify-center bg-white/95 rounded-full p-1.5 shadow-md ring-1 ring-[#c9a64655]">
+              <img
+                src="/assets/images/logo.png"
+                alt="Radha Madhav"
+                className="h-10 lg:h-12 w-auto"
+              />
+            </span>
             <div className="hidden sm:block leading-tight">
-              <div className="font-royal text-[15px] lg:text-[17px] font-700 text-[var(--rm-maroon)]">
+              <div
+                className="font-royal text-[15px] lg:text-[17px] font-bold transition-colors"
+                style={{ color: scrolled ? "#6a1e2c" : "#fbf8f1", textShadow: scrolled ? "none" : "0 2px 12px rgba(0,0,0,0.5)" }}
+              >
                 Radha Madhav
               </div>
-              <div className="text-[10px] tracking-[0.3em] uppercase text-[var(--rm-gold-deep)]">
+              <div
+                className="text-[10px] tracking-[0.3em] uppercase transition-colors"
+                style={{ color: scrolled ? "#a78429" : "#e6cf86", textShadow: scrolled ? "none" : "0 2px 12px rgba(0,0,0,0.5)" }}
+              >
                 Wholesale Family Mart
               </div>
             </div>
@@ -112,12 +120,14 @@ const Layout = ({ children }) => {
                 to={n.to}
                 end={n.to === "/"}
                 className={({ isActive }) =>
-                  `under-gold text-[13px] tracking-[0.18em] uppercase font-medium transition-colors ${
-                    isActive
-                      ? "text-[var(--rm-maroon)]"
-                      : "text-[var(--rm-ink)]/85 hover:text-[var(--rm-maroon)]"
-                  }`
+                  `under-gold text-[13px] tracking-[0.18em] uppercase font-semibold transition-colors`
                 }
+                style={({ isActive }) => ({
+                  color: scrolled
+                    ? isActive ? "#6a1e2c" : "#1a1414"
+                    : isActive ? "#e6cf86" : "#fbf8f1",
+                  textShadow: scrolled ? "none" : "0 2px 10px rgba(0,0,0,0.55)",
+                })}
                 data-testid={`nav-${n.label.toLowerCase()}`}
               >
                 {n.label}
@@ -135,7 +145,8 @@ const Layout = ({ children }) => {
               <span>Call Store</span>
             </a>
             <button
-              className="lg:hidden w-11 h-11 rounded-full border border-[var(--rm-gold)]/40 text-[var(--rm-maroon)] flex items-center justify-center bg-white"
+              className="lg:hidden w-11 h-11 rounded-full border border-[#c9a64666] flex items-center justify-center bg-white shadow-md"
+              style={{ color: "#6a1e2c" }}
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
               data-testid="mobile-menu-btn"
@@ -312,7 +323,8 @@ const Layout = ({ children }) => {
 
 const Footer = () => (
   <footer
-    className="bg-[var(--rm-maroon-deep)] text-[var(--rm-cream)]/85 pt-20 pb-32 lg:pb-20 relative overflow-hidden"
+    className="bg-[#4a121d] pt-20 pb-32 lg:pb-20 relative overflow-hidden"
+    style={{ color: "rgba(248, 245, 240, 0.88)" }}
     data-testid="footer"
   >
     <div
@@ -325,18 +337,18 @@ const Footer = () => (
     <div className="container-rm relative">
       <div className="grid md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
-          <Link to="/" className="flex items-center gap-3 mb-5">
-            <img src="/assets/images/logo.png" alt="" className="h-14" />
+          <Link to="/" className="flex items-center gap-3 mb-5" style={{ color: "inherit" }}>
+            <img src="/assets/images/logo.png" alt="" className="h-14 bg-white/95 rounded-full p-1.5 shadow-md" />
             <div>
               <div className="font-royal text-xl text-gold-grad">
                 Radha Madhav
               </div>
-              <div className="text-[11px] tracking-[0.3em] uppercase text-[var(--rm-gold-light)]">
+              <div className="text-[11px] tracking-[0.3em] uppercase text-[#e6cf86]">
                 Wholesale Family Mart
               </div>
             </div>
           </Link>
-          <p className="font-cormorant text-xl italic leading-relaxed text-[var(--rm-cream)]/80 max-w-md">
+          <p className="font-cormorant text-xl italic leading-relaxed max-w-md" style={{ color: "rgba(248, 245, 240, 0.85)" }}>
             "Yahan sirf kapde nahi, yaadein milti hain — har khushi, har
             occasion, ek hi jagah."
           </p>
@@ -345,7 +357,8 @@ const Footer = () => (
               href={SITE.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-[var(--rm-gold)]/40 flex items-center justify-center hover:bg-[var(--rm-gold)] hover:text-[var(--rm-maroon-deep)] transition"
+              className="w-10 h-10 rounded-full border border-[#c9a64666] flex items-center justify-center hover:bg-[#c9a646] hover:text-[#4a121d] transition"
+              style={{ color: "rgba(248, 245, 240, 0.88)" }}
               aria-label="Instagram"
             >
               <i className="fa-brands fa-instagram" />
@@ -354,7 +367,8 @@ const Footer = () => (
               href={SITE.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-[var(--rm-gold)]/40 flex items-center justify-center hover:bg-[var(--rm-gold)] hover:text-[var(--rm-maroon-deep)] transition"
+              className="w-10 h-10 rounded-full border border-[#c9a64666] flex items-center justify-center hover:bg-[#c9a646] hover:text-[#4a121d] transition"
+              style={{ color: "rgba(248, 245, 240, 0.88)" }}
               aria-label="Facebook"
             >
               <i className="fa-brands fa-facebook" />
@@ -363,7 +377,8 @@ const Footer = () => (
               href={waLink("Hi! I want to know more about your store.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-[var(--rm-gold)]/40 flex items-center justify-center hover:bg-[var(--rm-gold)] hover:text-[var(--rm-maroon-deep)] transition"
+              className="w-10 h-10 rounded-full border border-[#c9a64666] flex items-center justify-center hover:bg-[#c9a646] hover:text-[#4a121d] transition"
+              style={{ color: "rgba(248, 245, 240, 0.88)" }}
               aria-label="WhatsApp"
             >
               <i className="fa-brands fa-whatsapp" />
@@ -372,7 +387,7 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="font-royal text-lg text-[var(--rm-gold-light)] mb-4">
+          <h4 className="font-royal text-lg text-[#e6cf86] mb-4">
             Explore
           </h4>
           <ul className="space-y-2 text-sm">
@@ -380,7 +395,8 @@ const Footer = () => (
               <li key={n.to}>
                 <Link
                   to={n.to}
-                  className="hover:text-[var(--rm-gold-light)] transition"
+                  className="hover:text-[#e6cf86] transition"
+                  style={{ color: "rgba(248, 245, 240, 0.85)" }}
                 >
                   {n.label}
                 </Link>
@@ -390,26 +406,26 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="font-royal text-lg text-[var(--rm-gold-light)] mb-4">
+          <h4 className="font-royal text-lg text-[#e6cf86] mb-4">
             Visit Us
           </h4>
-          <p className="text-sm leading-relaxed mb-3">
-            <i className="fa-solid fa-location-dot mr-2 text-[var(--rm-gold)]" />
+          <p className="text-sm leading-relaxed mb-3" style={{ color: "rgba(248, 245, 240, 0.85)" }}>
+            <i className="fa-solid fa-location-dot mr-2 text-[#c9a646]" />
             {SITE.address}
           </p>
-          <p className="text-sm mb-1">
-            <i className="fa-solid fa-phone mr-2 text-[var(--rm-gold)]" />
-            <a href={`tel:${SITE.phone1}`}>{SITE.phone1}</a> /{" "}
-            <a href={`tel:${SITE.phone2}`}>{SITE.phone2}</a>
+          <p className="text-sm mb-1" style={{ color: "rgba(248, 245, 240, 0.85)" }}>
+            <i className="fa-solid fa-phone mr-2 text-[#c9a646]" />
+            <a href={`tel:${SITE.phone1}`} style={{ color: "inherit" }}>{SITE.phone1}</a> /{" "}
+            <a href={`tel:${SITE.phone2}`} style={{ color: "inherit" }}>{SITE.phone2}</a>
           </p>
-          <p className="text-sm">
-            <i className="fa-solid fa-clock mr-2 text-[var(--rm-gold)]" />
+          <p className="text-sm" style={{ color: "rgba(248, 245, 240, 0.85)" }}>
+            <i className="fa-solid fa-clock mr-2 text-[#c9a646]" />
             {SITE.hours}
           </p>
         </div>
       </div>
 
-      <div className="mt-14 pt-6 border-t border-[var(--rm-gold)]/20 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[var(--rm-cream)]/60">
+      <div className="mt-14 pt-6 border-t border-[#c9a64633] flex flex-col md:flex-row items-center justify-between gap-3 text-xs" style={{ color: "rgba(248, 245, 240, 0.6)" }}>
         <span>
           © {new Date().getFullYear()} Radha Madhav Wholesale Family Mart LLP.
           All rights reserved.

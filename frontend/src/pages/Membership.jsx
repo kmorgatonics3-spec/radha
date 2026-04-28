@@ -32,7 +32,7 @@ const Membership = () => {
         <h1 className="font-royal text-5xl md:text-7xl mt-4 hero-text-shadow">
           Radha Madhav <span className="text-gold-grad">Family Club</span>
         </h1>
-        <p className="font-cormorant italic text-xl md:text-2xl mt-4 text-[var(--rm-cream)]/85">
+        <p className="font-cormorant italic text-xl md:text-2xl mt-4 text-[#f3ece0]">
           Aap sirf customer nahi, parivaar ho — and parivaar ke liye kuch khaas hota hai.
         </p>
       </section>

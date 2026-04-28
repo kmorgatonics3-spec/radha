@@ -49,7 +49,7 @@ const Collections = () => {
             Har Umar, Har Style,
             <span className="block text-gold-grad">Har Budget</span>
           </h1>
-          <p className="font-cormorant italic text-xl md:text-2xl mt-4 text-[var(--rm-cream)]/85">
+          <p className="font-cormorant italic text-xl md:text-2xl mt-4 text-[#f3ece0]">
             From bridal grandeur to everyday elegance — explore collections
             curated for every soul in your family.
           </p>

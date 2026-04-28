@@ -70,7 +70,7 @@ const Home = () => {
             <span className="block text-balance">— Ek Hi Jagah</span>
           </h1>
           <p
-            className="mt-7 max-w-2xl mx-auto text-base md:text-lg text-[var(--rm-cream)]/90 font-cormorant italic text-xl md:text-2xl fade-up"
+            className="mt-7 max-w-2xl mx-auto text-base md:text-lg text-[#fbf8f1] font-cormorant italic text-xl md:text-2xl fade-up"
             style={{ animationDelay: "0.5s" }}
           >
             Radha Madhav Wholesale Family Mart — Gorakhpur ka trusted fashion
@@ -96,7 +96,7 @@ const Home = () => {
             </a>
           </div>
 
-          <div className="mt-16 hidden md:flex items-center justify-center gap-10 text-[var(--rm-cream)]/85 fade-in" style={{ animationDelay: "1.1s" }}>
+          <div className="mt-16 hidden md:flex items-center justify-center gap-10 text-[#f3ece0] fade-in" style={{ animationDelay: "1.1s" }}>
             <Stat n="50,000+" l="Happy Families" />
             <span className="w-[1px] h-10 bg-[var(--rm-gold)]/40" />
             <Stat n="10,000+" l="Wedding Outfits" />
@@ -105,7 +105,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--rm-cream)]/70 text-xs tracking-[0.4em] uppercase animate-pulse">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#e1d4ba] text-xs tracking-[0.4em] uppercase animate-pulse">
           <i className="fa-solid fa-chevron-down mr-2" /> Scroll
         </div>
       </section>
@@ -167,7 +167,7 @@ const Home = () => {
                     <i className={`fa-solid ${o.icon}`} />
                   </div>
                   <h3 className="font-display text-lg lg:text-xl">{o.name}</h3>
-                  <p className="text-[11px] tracking-[0.2em] uppercase text-[var(--rm-cream)]/80 mt-1">
+                  <p className="text-[11px] tracking-[0.2em] uppercase text-[#ede4d3] mt-1">
                     {o.subtitle}
                   </p>
                 </div>
@@ -259,7 +259,7 @@ const Home = () => {
               Aaj ke{" "}
               <span className="shimmer-text">Special Showroom Offers</span>
             </h2>
-            <p className="font-cormorant italic text-2xl text-[var(--rm-cream)]/85 mt-3">
+            <p className="font-cormorant italic text-2xl text-[#f3ece0] mt-3">
               Limited time offers — Visit today
             </p>
           </div>
@@ -288,7 +288,7 @@ const Home = () => {
                     className={`fa-solid ${o.icon} text-[var(--rm-gold-light)] mb-2`}
                   />
                   <h3 className="font-display text-lg">{o.title}</h3>
-                  <p className="text-xs text-[var(--rm-cream)]/75 mt-1">
+                  <p className="text-xs text-[#e7dcc6] mt-1">
                     {o.subtitle}
                   </p>
                   <p className="font-royal text-[var(--rm-gold-light)] mt-3 text-sm">
@@ -503,7 +503,7 @@ const Home = () => {
                 </p>
                 <div className="mt-5 pt-5 border-t border-[var(--rm-gold)]/20">
                   <div className="font-display text-base">{t.name}</div>
-                  <div className="text-xs text-[var(--rm-gold-light)]/80 tracking-wider uppercase">
+                  <div className="text-xs text-[#d6bc6e] tracking-wider uppercase">
                     {t.place}
                   </div>
                 </div>

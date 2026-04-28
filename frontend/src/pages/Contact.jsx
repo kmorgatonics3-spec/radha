@@ -19,7 +19,7 @@ const Contact = () => {
         <h1 className="font-royal text-5xl md:text-7xl mt-4 hero-text-shadow">
           Ek Baar <span className="text-gold-grad">Aaiye</span>
         </h1>
-        <p className="font-cormorant italic text-xl md:text-2xl mt-4 text-[var(--rm-cream)]/85">
+        <p className="font-cormorant italic text-xl md:text-2xl mt-4 text-[#f3ece0]">
           Farq khud mehsoos kijiye — hamari grand showroom mein.
         </p>
       </section>

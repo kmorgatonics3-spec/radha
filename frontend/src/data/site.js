@@ -19,13 +19,9 @@ export const SITE = {
 export const waLink = (msg) =>
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`;
 
-// Image URL builder for Pexels with auto-compression
+// Image URL builder for Pexels with auto-compression (canonical format only)
 const px = (id) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900`;
-
-// Path-style for IDs that have nested folder
-const pxF = (id, path) =>
-  `https://images.pexels.com/photos/${id}/${path}?auto=compress&cs=tinysrgb&w=900`;
 
 export const occasions = [
   {
@@ -58,7 +54,7 @@ export const occasions = [
     subtitle: "The Grand Day",
     icon: "fa-crown",
     color: "#c9a646",
-    image: pxF(34479857, "free-photo-of-traditional-indian-wedding-ceremony-in-indore.jpeg"),
+    image: px(34479857),
   },
   {
     id: "daily",
@@ -66,7 +62,7 @@ export const occasions = [
     subtitle: "Everyday Grace",
     icon: "fa-feather",
     color: "#6a1e2c",
-    image: pxF(33006935, "free-photo-of-elegant-sikh-wedding-ceremony-indoors.jpeg"),
+    image: px(33006935),
   },
 ];
 
@@ -79,25 +75,25 @@ export const collections = {
         name: "Royal Maroon Lehenga",
         price: "Visit For Price",
         tag: "Bridal",
-        img: pxF(33101418, "free-photo-of-intricate-details-of-traditional-indian-bridal-lehenga.jpeg"),
+        img: px(33101418),
       },
       {
         name: "Banarasi Silk Saree",
         price: "Visit For Price",
         tag: "Heritage",
-        img: pxF(35872894, "free-photo-of-traditional-indian-wedding-ceremony-ritual.jpeg"),
+        img: px(35872894),
       },
       {
         name: "Pastel Reception Lehenga",
         price: "Visit For Price",
         tag: "Reception",
-        img: pxF(17000467, "free-photo-of-newlyweds-in-traditional-dress-and-turban.jpeg"),
+        img: px(17000467),
       },
       {
         name: "Kundan Bridal Jewellery",
         price: "Visit For Price",
         tag: "Jewellery",
-        img: pxF(33101418, "free-photo-of-intricate-details-of-traditional-indian-bridal-lehenga.jpeg"),
+        img: px(33101418),
       },
     ],
   },
@@ -109,7 +105,7 @@ export const collections = {
         name: "Ivory Embroidered Sherwani",
         price: "Visit For Price",
         tag: "Wedding",
-        img: pxF(35843780, "free-photo-of-traditional-indian-wedding-ceremony-celebration.jpeg"),
+        img: px(35843780),
       },
       {
         name: "Royal Maroon Indo-Western",
@@ -127,7 +123,7 @@ export const collections = {
         name: "Silk Kurta Pajama Set",
         price: "Visit For Price",
         tag: "Festive",
-        img: pxF(17000467, "free-photo-of-newlyweds-in-traditional-dress-and-turban.jpeg"),
+        img: px(17000467),
       },
     ],
   },
@@ -145,19 +141,19 @@ export const collections = {
         name: "Festive Kids Lehenga",
         price: "Visit For Price",
         tag: "Kids",
-        img: pxF(35872894, "free-photo-of-traditional-indian-wedding-ceremony-ritual.jpeg"),
+        img: px(35872894),
       },
       {
         name: "Cotton Daily Saree",
         price: "Visit For Price",
         tag: "Daily",
-        img: pxF(33006935, "free-photo-of-elegant-sikh-wedding-ceremony-indoors.jpeg"),
+        img: px(33006935),
       },
       {
         name: "Boys Sherwani Set",
         price: "Visit For Price",
         tag: "Kids",
-        img: pxF(34479857, "free-photo-of-traditional-indian-wedding-ceremony-in-indore.jpeg"),
+        img: px(34479857),
       },
     ],
   },
@@ -178,7 +174,7 @@ export const offers = [
     save: "Flat 20% Off",
     color: "#c9a646",
     icon: "fa-tags",
-    image: pxF(35872894, "free-photo-of-traditional-indian-wedding-ceremony-ritual.jpeg"),
+    image: px(35872894),
   },
   {
     title: "Groom Special Offer",
@@ -186,7 +182,7 @@ export const offers = [
     save: "Save ₹4,000+",
     color: "#4a121d",
     icon: "fa-user-tie",
-    image: pxF(17000467, "free-photo-of-newlyweds-in-traditional-dress-and-turban.jpeg"),
+    image: px(17000467),
   },
   {
     title: "Bulk Purchase Benefits",
@@ -194,7 +190,7 @@ export const offers = [
     save: "Best Prices",
     color: "#8a2a3a",
     icon: "fa-store",
-    image: pxF(35843780, "free-photo-of-traditional-indian-wedding-ceremony-celebration.jpeg"),
+    image: px(35843780),
   },
 ];
 
@@ -231,15 +227,15 @@ export const testimonials = [
 
 export const galleryImages = [
   px(9778787),
-  pxF(35872894, "free-photo-of-traditional-indian-wedding-ceremony-ritual.jpeg"),
-  pxF(33101418, "free-photo-of-intricate-details-of-traditional-indian-bridal-lehenga.jpeg"),
-  pxF(34479857, "free-photo-of-traditional-indian-wedding-ceremony-in-indore.jpeg"),
-  pxF(17000467, "free-photo-of-newlyweds-in-traditional-dress-and-turban.jpeg"),
-  pxF(35843780, "free-photo-of-traditional-indian-wedding-ceremony-celebration.jpeg"),
+  px(35872894),
+  px(33101418),
+  px(34479857),
+  px(17000467),
+  px(35843780),
   px(8938193),
   px(29357484),
   "/assets/images/showroom.jpg",
-  pxF(33006935, "free-photo-of-elegant-sikh-wedding-ceremony-indoors.jpeg"),
+  px(33006935),
   px(12037072),
   px(8819253),
 ];

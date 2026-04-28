@@ -20,7 +20,7 @@ const Offers = () => {
         <h1 className="font-royal text-5xl md:text-7xl mt-4 hero-text-shadow">
           Showroom <span className="text-gold-grad">Offers</span>
         </h1>
-        <p className="font-cormorant italic text-xl md:text-2xl mt-4 text-[var(--rm-cream)]/85">
+        <p className="font-cormorant italic text-xl md:text-2xl mt-4 text-[#f3ece0]">
           Aaj ke special — sirf hamare showroom par.
         </p>
         <div className="mt-8">
@@ -104,7 +104,7 @@ const Offers = () => {
                   <i className={`fa-solid ${p.icon}`} />
                 </span>
                 <h4 className="font-display text-lg mt-4">{p.title}</h4>
-                <p className="text-sm text-[var(--rm-cream)]/80 mt-2">{p.subtitle}</p>
+                <p className="text-sm text-[#ede4d3] mt-2">{p.subtitle}</p>
               </div>
             ))}
           </div>
